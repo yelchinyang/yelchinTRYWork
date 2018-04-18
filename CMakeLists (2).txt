@@ -1,0 +1,24 @@
+
+# CMake Minimum Required Version 
+cmake_minimum_required ( VERSION 2.8 )
+
+# Project Info
+Project( Demo3 )
+
+# Find all source files in current directory path
+# Save all file names in DIR_SRCS variable 
+aux_source_directory( . DIR_SRCS )
+
+# Add sub directory 'math'
+#add_subdirectory( math )
+
+include_directories(./math)
+
+link_directories( /data/home/yelchinyang/fileCMake/Demo3/mathLib )
+
+# Target generated 
+add_executable( Demo ${DIR_SRCS} )
+
+# add needed libraries
+#target_link_libraries( Demo /data/home/yelchinyang/fileCMake/mathLib/libMathFunctions.a z )
+target_link_libraries( Demo libMathFunctions.a ) 
